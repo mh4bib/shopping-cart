@@ -17,6 +17,17 @@ function plusMinusBtn(product,isPlus,price){
 
     console.log(productTotal);
 }
+function total(){
+    const phonePrice = document.getElementById('phone-price');
+    const casePrice = document.getElementById('case-price');
+    const subTotal = document.getElementById('sub-total');
+    const tax = document.getElementById('tax');
+    const total = document.getElementById('total');
+
+    subTotal.innerText = parseFloat(phonePrice.innerText) + parseFloat(casePrice.innerText);
+    tax.innerText = parseFloat(subTotal.innerText) / 10;
+    total.innerText = parseFloat(subTotal.innerText) + parseFloat(tax.innerText);
+}
 
 document.getElementById('phone-plus').addEventListener('click',function(){
     plusMinusBtn('phone', true, 1219);
